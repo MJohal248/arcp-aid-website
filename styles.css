@@ -282,6 +282,40 @@ p.section-sub {
   font-weight: 700;
 }
 
+/* Resources */
+.resource-list {
+  max-width: 680px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.resource-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 18px 22px;
+  text-decoration: none;
+  color: var(--text);
+}
+.resource-row:hover { border-color: var(--navy); }
+.resource-row .icon {
+  width: 42px; height: 42px;
+  border-radius: 10px;
+  background: #EEF4FB;
+  color: var(--navy);
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700; font-size: 15px;
+  flex-shrink: 0;
+}
+.resource-row .info { flex: 1; }
+.resource-row .label { font-weight: 600; font-size: 15px; }
+.resource-row .hint { color: var(--muted); font-size: 13px; margin-top: 2px; }
+.resource-row .go { color: var(--navy); font-weight: 600; font-size: 14px; flex-shrink: 0; }
+
 /* Footer */
 footer.site {
   border-top: 1px solid var(--border);
@@ -306,6 +340,12 @@ footer.site .disclaimer {
   font-size: 13px;
   color: var(--muted);
   margin-top: 18px;
+  /* The footer's outer .wrap uses align-items:flex-start, which shrinks
+     flex children to their content width instead of stretching them —
+     that's what was making this paragraph wrap narrower than the rest of
+     the footer. width:100% forces it to use the full row width instead.
+     Widened 2026-08-10 per Mon's request. */
+  width: 100%;
 }
 
 @media (max-width: 860px) {
