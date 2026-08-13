@@ -194,20 +194,25 @@ p.section-sub {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 24px;
-  max-width: 900px;
-  margin: 0 auto 40px;
+  margin-bottom: 40px;
 }
 .testimonial {
   background: var(--card-bg);
   border: 1px solid var(--border);
   border-radius: 14px;
-  padding: 28px 26px;
+  overflow: hidden;
 }
 .testimonial .quote {
   font-size: 15px;
   color: var(--text);
-  margin: 0 0 16px;
+  margin: 0;
   line-height: 1.6;
+  padding: 28px 26px 24px;
+}
+.testimonial .attribution {
+  background: #F5F8FC;
+  border-top: 1px solid var(--border);
+  padding: 16px 26px;
 }
 .testimonial .name { font-weight: 700; font-size: 14px; margin: 0; }
 .testimonial .role { color: var(--muted); font-size: 13px; margin: 2px 0 0; }
