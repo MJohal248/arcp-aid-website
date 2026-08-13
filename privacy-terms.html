@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Privacy Policy &amp; Terms — ARCP Aid</title>
-<meta name="description" content="ARCP Aid Privacy Policy and Terms & Conditions — pilot / TestFlight beta version.">
+<meta name="description" content="ARCP Aid Privacy Policy and Terms & Conditions.">
 <link rel="icon" href="assets/icon.png">
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -23,13 +23,23 @@
       <a href="privacy-terms.html">Privacy &amp; Terms</a>
       <a href="contact.html">Contact</a>
     </nav>
+    <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" onclick="toggleMobileMenu()">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="resources.html">Resources</a>
+    <a href="privacy-terms.html">Privacy &amp; Terms</a>
+    <a href="contact.html">Contact</a>
   </div>
 </header>
 
 <section>
   <div class="wrap">
     <h1 style="text-align:center; margin-bottom:6px;">Terms &amp; Conditions and Privacy Policy</h1>
-    <p class="legal-updated">Pilot / TestFlight beta version — last updated 1 August 2026</p>
+    <p class="legal-updated">Last updated 13 August 2026</p>
 
     <div class="legal-nav">
       <a href="#introduction">Introduction</a>
@@ -45,7 +55,7 @@
       <p>ARCP Aid (the "App") is an independent tool built for IMT trainees to track progress against ARCP requirements. It is not affiliated with, endorsed by, or a substitute for the NHS ePortfolio, JRCPTB, or Health Education England. Your official record of progress remains the NHS ePortfolio.</p>
 
       <h2>2. Eligibility</h2>
-      <p>The App is made available to trainees invited to this pilot via TestFlight. Use is restricted to persons aged 18 or over.</p>
+      <p>The App is made available to Internal Medicine Training (IMT) trainees. Use is restricted to persons aged 18 or over.</p>
 
       <h2>3. Patient data</h2>
       <p>You must not enter patient-identifiable information into the App, including names, hospital or NHS numbers, dates of birth, or addresses. Responsibility for compliance with this clause rests with you.</p>
@@ -54,7 +64,7 @@
       <p>All entries you make — SLEs, procedures, teaching, reflections, checklist progress, name, and training year — are stored locally on your device only. No account or central database exists for this content, and it is never transmitted to the developer. See clause 5 for the one deliberate exception to this, and clause 7 for feedback.</p>
 
       <h2 id="usage-data">5. Anonymous usage data</h2>
-      <p>To help evaluate this pilot, the App sends anonymous, device-level counts of which features you use — for example, that an SLE was logged, or that a summary was exported — to a secure database. These events contain no portfolio content, no names, and nothing that could identify you or a patient: only an anonymous per-installation identifier (the same one already used elsewhere in the App to apply fair-usage limits on AI features) and the type of action taken. This data is used only to understand which parts of the App are genuinely useful to trainees, and to guide what gets built next. It is not linked to any other data you enter, and cannot be selectively deleted on request, since there is nothing identifying to search for — deleting the App or its data does not affect usage-event records already sent.</p>
+      <p>To help understand how the App is used, the App sends anonymous, device-level counts of which features you use — for example, that an SLE was logged, or that a summary was exported — to a secure database. These events contain no portfolio content, no names, and nothing that could identify you or a patient: only an anonymous per-installation identifier (the same one already used elsewhere in the App to apply fair-usage limits on AI features) and the type of action taken. This data is used only to understand which parts of the App are genuinely useful to trainees, and to guide what gets built next. It is not linked to any other data you enter, and cannot be selectively deleted on request, since there is nothing identifying to search for — deleting the App or its data does not affect usage-event records already sent.</p>
 
       <h2 id="ai-features">6. AI features</h2>
       <p>Using "Check spelling &amp; grammar" or "Draft with AI" sends the relevant field's text to Anthropic's Claude API via a secure proxy, solely to generate that suggestion. This text is not retained by the developer and is not used to train any model, and is subject to Anthropic's Data Processing Addendum and Standard Contractual Clauses.</p>
@@ -69,13 +79,13 @@
       <p>Deleting an entry removes it; deleting the App removes all locally stored data permanently. No backup is provided — retain your official ePortfolio records independently. This does not apply to the anonymous usage-event and feedback data described in clauses 5 and 7, which are not linked to your device and cannot be selectively deleted.</p>
 
       <h2>10. No warranty</h2>
-      <p>The App is provided as pilot software, "as is", without warranty of any kind. It is not a certified medical device and must not be relied upon as an authoritative record of progress.</p>
+      <p>The App is provided "as is", without warranty of any kind. It is not a certified medical device and must not be relied upon as an authoritative record of progress.</p>
 
       <h2>11. Liability</h2>
       <p>To the extent permitted by law, the developer accepts no liability for loss or damage arising from use of the App.</p>
 
       <h2>12. Changes</h2>
-      <p>These terms may be updated during the pilot. Material changes will require re-acceptance.</p>
+      <p>These terms may be updated from time to time. Material changes will require re-acceptance.</p>
 
       <h2 id="gdpr">13. Data protection (UK GDPR)</h2>
       <p>Portfolio content entered into the App is stored locally and is not accessible to the developer. The two exceptions are: text processed transiently via Anthropic's API as described in clause 6, covered by Anthropic's Data Processing Addendum and Standard Contractual Clauses; and the anonymous usage-event and feedback data described in clauses 5 and 7, which is not linked to your identity and does not constitute personal data.</p>
@@ -105,5 +115,6 @@
   </div>
 </footer>
 
+<script src="nav.js"></script>
 </body>
 </html>
