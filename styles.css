@@ -201,6 +201,8 @@ p.section-sub {
   border: 1px solid var(--border);
   border-radius: 14px;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 .testimonial .quote {
   font-size: 15px;
@@ -208,6 +210,7 @@ p.section-sub {
   margin: 0;
   line-height: 1.6;
   padding: 28px 26px 24px;
+  flex: 1;
 }
 .testimonial .attribution {
   background: #F5F8FC;
