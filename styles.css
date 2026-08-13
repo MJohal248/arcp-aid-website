@@ -189,6 +189,29 @@ p.section-sub {
 .stat .n { font-size: 30px; font-weight: 800; color: var(--navy); }
 .stat .label { color: var(--muted); font-size: 14px; margin-top: 4px; }
 
+/* Testimonials */
+.testimonials {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  max-width: 900px;
+  margin: 0 auto 40px;
+}
+.testimonial {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 28px 26px;
+}
+.testimonial .quote {
+  font-size: 15px;
+  color: var(--text);
+  margin: 0 0 16px;
+  line-height: 1.6;
+}
+.testimonial .name { font-weight: 700; font-size: 14px; margin: 0; }
+.testimonial .role { color: var(--muted); font-size: 13px; margin: 2px 0 0; }
+
 /* Download */
 .download-box {
   background: var(--navy);
@@ -351,6 +374,7 @@ footer.site .disclaimer {
 @media (max-width: 860px) {
   .hero .wrap { grid-template-columns: 1fr; }
   .grid-3, .grid-4, .pilot-stats, .credentials { grid-template-columns: 1fr 1fr; }
+  .testimonials { grid-template-columns: 1fr; }
   .shot-row { grid-template-columns: 1fr; }
   nav.main { display: none; }
 }
