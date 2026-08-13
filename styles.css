@@ -1,388 +1,192 @@
-:root {
-  --navy: #185FA5;
-  --navy-dark: #124A82;
-  --cross-blue: #8CBCE8;
-  --bg: #FDFCF9;
-  --card-bg: #FFFFFF;
-  --text: #1A1A1A;
-  --muted: #5F5E5A;
-  --border: #E3E9F0;
-  --max: 1080px;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ARCP Aid — Live ARCP tracking for IMT trainees</title>
+<meta name="description" content="ARCP Aid turns the IMT curriculum into a live dashboard, so trainees always know where they stand against ARCP requirements. Built by a trainee, currently piloting across North West London.">
+<link rel="icon" href="assets/icon.png">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
 
-* { box-sizing: border-box; }
+<header class="site">
+  <div class="wrap">
+    <a href="index.html" class="brand">
+      <img src="assets/icon.png" alt="ARCP Aid logo">
+      ARCP Aid
+    </a>
+    <nav class="main">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="resources.html">Resources</a>
+      <a href="privacy-terms.html">Privacy &amp; Terms</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" onclick="toggleMobileMenu()">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="resources.html">Resources</a>
+    <a href="privacy-terms.html">Privacy &amp; Terms</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</header>
 
-html { scroll-behavior: smooth; }
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <h1>A way for IMT trainees to track ARCP progress, live, on the&nbsp;go</h1>
+      <p class="lede">ARCP Aid turns the JRCPTB Decision Aid, Stage 1 Guidance and yearly checklists into a live dashboard — so trainees always know where they stand.</p>
+      <div class="cta-row">
+        <a href="#download" class="btn btn-primary">Get the app</a>
+        <a href="about.html" class="btn btn-secondary">About the creator</a>
+      </div>
+      <p class="trust-line">See the <a href="#pilot">pilot and evidence base</a> below, or go straight to the <a href="privacy-terms.html">Privacy&nbsp;Policy&nbsp;&amp;&nbsp;Terms</a>.</p>
+    </div>
+    <div class="hero-img">
+      <img src="assets/rings-preview.png" alt="ARCP Aid dashboard showing progress rings for Acute take, Clinics and Teaching">
+    </div>
+  </div>
+</section>
 
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-  color: var(--text);
-  background: var(--bg);
-  line-height: 1.6;
-}
+<section class="alt">
+  <div class="wrap">
+    <h2 class="section-title">The problem</h2>
+    <div class="grid-3">
+      <div class="card">
+        <h3>No live view of progress</h3>
+        <p>It's hard to know if you're on track with your take, clinic and teaching numbers, or what's left to do.</p>
+      </div>
+      <div class="card">
+        <h3>Requirements are hard to track</h3>
+        <p>The Decision Aid, the Stage 1 Guidance, the yearly checklists — all separate PDFs that change over time. Easy to miss an update.</p>
+      </div>
+      <div class="card">
+        <h3>Gaps found too late</h3>
+        <p>Trainees often don't spot a portfolio gap until ARCP is close — exactly the wrong time to find out, with no time left to fix it.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-a { color: var(--navy); }
+<section>
+  <div class="wrap">
+    <h2 class="section-title">What the app does</h2>
+    <p class="section-sub">Four things, all built directly from the primary source documents and kept current as they change.</p>
+    <div class="grid-4">
+      <div class="card">
+        <div class="num-badge">1</div>
+        <h3>Live dashboard</h3>
+        <p>Rings that update in real time against IMT1, IMT2 and IMT3 targets, as soon as something is logged.</p>
+      </div>
+      <div class="card">
+        <div class="num-badge">2</div>
+        <h3>Structured logging</h3>
+        <p>SLEs and reflections captured in minutes, in the exact format needed for the portfolio, with AI support to help write them up.</p>
+      </div>
+      <div class="card">
+        <div class="num-badge">3</div>
+        <h3>Curriculum-accurate checklist</h3>
+        <p>Built directly from the ARCP Decision Aid and Stage 1 Guidance, and kept current as those documents change.</p>
+      </div>
+      <div class="card">
+        <div class="num-badge">4</div>
+        <h3>One-tap export</h3>
+        <p>Excel and PDF summaries generated straight from logged data, ready for an ES meeting or your personal library.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-.wrap {
-  max-width: var(--max);
-  margin: 0 auto;
-  padding: 0 24px;
-}
+<section class="alt">
+  <div class="wrap">
+    <h2 class="section-title">See it in the app</h2>
+    <div class="shot-row">
+      <figure>
+        <img src="assets/screenshot-log.png" alt="Log screen showing entry types: Acute take, Clinic, Teaching, Procedure, SLE, Reflection">
+        <figcaption>Log anything in seconds</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/screenshot-library.png" alt="Library screen showing logged entries filtered by type">
+        <figcaption>Everything logged, in one place</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/screenshot-export.png" alt="Export screen with buttons to generate an Excel summary or PDF report">
+        <figcaption>Export direct to your personal library, or take a summary to your ES meeting</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
 
-/* Header */
-header.site {
-  border-bottom: 1px solid var(--border);
-  background: var(--bg);
-  position: sticky;
-  top: 0;
-  z-index: 10;
-}
-header.site .wrap {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 72px;
-}
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  text-decoration: none;
-  color: var(--text);
-  font-weight: 700;
-  font-size: 19px;
-}
-.brand img { width: 34px; height: 34px; }
-nav.main a {
-  margin-left: 28px;
-  text-decoration: none;
-  color: var(--text);
-  font-size: 15px;
-  font-weight: 500;
-}
-nav.main a:hover { color: var(--navy); }
+<section id="pilot">
+  <div class="wrap">
+    <h2 class="section-title">Built properly, tested properly</h2>
+    <p class="section-sub">Every requirement in the app is fact-checked directly against the JRCPTB IMT ARCP Decision Aid, the Stage 1 ARCP Guidance, and the official IMT1–3 checklists — and rechecked whenever national guidance changes.</p>
+    <div class="testimonials">
+      <div class="testimonial">
+        <p class="quote">"ARCP Aid offers a really user friendly experience and well presented way of tracking my portfolio requirements, I particularly liked the procedures and checklist tabs which give me an instant snapshot of the required level for my grade and my progress in relation to this."</p>
+        <div class="attribution">
+          <p class="name">Dr Michael</p>
+          <p class="role">IMT2, North West London trainee</p>
+        </div>
+      </div>
+      <div class="testimonial">
+        <p class="quote">"I love how quickly I can log my take patients during a shift — it takes seconds, and the same goes for clinics and teaching, so I'm always on top of it as I go. My favourite feature is the one-tap export, which pulls everything into a clean summary ready to drop straight into my ePortfolio's personal library — it's going to save me so much time in the long run."</p>
+        <div class="attribution">
+          <p class="name">Dr Christine</p>
+          <p class="role">IMT2, South East London trainee</p>
+        </div>
+      </div>
+    </div>
+    <div class="pilot-stats">
+      <div class="stat">
+        <div class="n">3</div>
+        <div class="label">PDSA cycles, Aug 2026 – Aug 2027</div>
+      </div>
+      <div class="stat">
+        <div class="n">~500</div>
+        <div class="label">Trainees in the North West London rollout</div>
+      </div>
+      <div class="stat">
+        <div class="n">IMT1–3</div>
+        <div class="label">Full curriculum coverage, kept current</div>
+      </div>
+    </div>
+  </div>
+</section>
 
-/* Hero */
-.hero {
-  padding: 72px 0 56px;
-}
-.hero .wrap {
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 48px;
-  align-items: center;
-}
-.hero h1 {
-  font-size: 42px;
-  line-height: 1.15;
-  margin: 0 0 18px;
-  color: var(--text);
-}
-.hero .lede {
-  font-size: 19px;
-  color: var(--muted);
-  margin: 0 0 28px;
-  max-width: 540px;
-}
-.cta-row { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 14px; }
-.btn {
-  display: inline-block;
-  padding: 13px 26px;
-  border-radius: 10px;
-  font-weight: 600;
-  font-size: 15px;
-  text-decoration: none;
-  border: 2px solid transparent;
-}
-.btn-primary { background: var(--navy); color: #fff; }
-.btn-primary:hover { background: var(--navy-dark); }
-.btn-secondary { background: transparent; color: var(--navy); border-color: var(--navy); }
-.btn-secondary:hover { background: #EEF4FB; }
-.trust-line {
-  font-size: 14px;
-  color: var(--muted);
-}
-.trust-line a { font-weight: 600; }
-.hero-img { text-align: center; }
-.hero-img img { max-width: 100%; }
+<section class="alt" id="download">
+  <div class="wrap">
+    <div class="download-box">
+      <h2>Try ARCP Aid</h2>
+      <div class="cta-row" style="justify-content:center;">
+        <a href="https://testflight.apple.com/join/KSzTAXwG" class="btn btn-primary" target="_blank" rel="noopener">iOS (TestFlight)</a>
+        <a href="#" class="btn btn-secondary">Android</a>
+      </div>
+    </div>
+  </div>
+</section>
 
-/* Sections */
-section { padding: 56px 0; }
-section.alt { background: #F5F8FC; }
-h2.section-title {
-  font-size: 28px;
-  margin: 0 0 8px;
-  text-align: center;
-}
-p.section-sub {
-  text-align: center;
-  color: var(--muted);
-  max-width: 620px;
-  margin: 0 auto 40px;
-  font-size: 16px;
-}
+<footer class="site">
+  <div class="wrap" style="flex-direction:column; align-items:flex-start;">
+    <div class="wrap" style="width:100%; padding:0; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;">
+      <span style="font-weight:700;">ARCP Aid</span>
+      <div class="foot-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="resources.html">Resources</a>
+        <a href="privacy-terms.html">Privacy &amp; Terms</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+    <p class="disclaimer">ARCP Aid is an independent tool built for IMT trainees. It is not affiliated with, endorsed by, or a substitute for the NHS ePortfolio, JRCPTB, or NHS England. Your official record of progress remains the NHS ePortfolio.</p>
+  </div>
+</footer>
 
-/* Problem / solution grids */
-.grid-3 {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-}
-.grid-4 {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-}
-.card {
-  background: var(--card-bg);
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  padding: 26px 22px;
-}
-.card h3 { margin: 0 0 10px; font-size: 17px; }
-.card p { margin: 0; color: var(--muted); font-size: 15px; }
-.num-badge {
-  width: 30px; height: 30px;
-  border-radius: 50%;
-  background: var(--navy);
-  color: #fff;
-  display: flex; align-items: center; justify-content: center;
-  font-weight: 700; font-size: 14px;
-  margin-bottom: 14px;
-}
-
-/* Screenshots */
-.shot-row {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
-  align-items: start;
-}
-.shot-row figure { margin: 0; text-align: center; }
-.shot-row img {
-  width: 100%;
-  max-width: 260px;
-  border-radius: 18px;
-}
-.shot-row figcaption {
-  margin-top: 30px;
-  font-weight: 600;
-  font-size: 15px;
-  color: var(--text);
-}
-
-/* Evidence / pilot */
-.pilot-stats {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  margin-top: 32px;
-}
-.stat {
-  text-align: center;
-  background: var(--card-bg);
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  padding: 22px;
-}
-.stat .n { font-size: 30px; font-weight: 800; color: var(--navy); }
-.stat .label { color: var(--muted); font-size: 14px; margin-top: 4px; }
-
-/* Testimonials */
-.testimonials {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
-  margin-bottom: 40px;
-}
-.testimonial {
-  background: var(--card-bg);
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-}
-.testimonial .quote {
-  font-size: 15px;
-  color: var(--text);
-  margin: 0;
-  line-height: 1.6;
-  padding: 28px 26px 24px;
-  flex: 1;
-}
-.testimonial .attribution {
-  background: #F5F8FC;
-  border-top: 1px solid var(--border);
-  padding: 16px 26px;
-}
-.testimonial .name { font-weight: 700; font-size: 14px; margin: 0; }
-.testimonial .role { color: var(--muted); font-size: 13px; margin: 2px 0 0; }
-
-/* Download */
-.download-box {
-  background: var(--navy);
-  border-radius: 20px;
-  padding: 48px;
-  text-align: center;
-  color: #fff;
-}
-.download-box h2 { margin: 0 0 10px; font-size: 26px; }
-.download-box p { color: #DCEBFA; margin: 0 0 26px; }
-.download-box .btn-primary { background: #fff; color: var(--navy); }
-.download-box .btn-primary:hover { background: #EEF4FB; }
-.download-box .btn-secondary { border-color: #fff; color: #fff; }
-.download-box .btn-secondary:hover { background: rgba(255,255,255,0.1); }
-
-/* About page */
-.about-hero {
-  padding: 56px 0 20px;
-  text-align: center;
-}
-.about-hero .avatar {
-  width: 160px; height: 160px;
-  border-radius: 50%;
-  object-fit: cover;
-  display: block;
-  margin: 0 auto 20px;
-  box-shadow: 0 0 0 4px #fff, 0 2px 10px rgba(0,0,0,0.08);
-}
-.prose {
-  max-width: 720px;
-  margin: 0 auto;
-  font-size: 17px;
-}
-.prose h2 { margin-top: 40px; }
-.prose p { color: var(--text); }
-.credentials {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 16px;
-  margin: 28px 0;
-}
-.credentials .item {
-  background: var(--card-bg);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 16px 18px;
-  font-size: 15px;
-}
-.credentials .item strong { display: block; color: var(--navy); font-size: 13px; text-transform: uppercase; letter-spacing: 0.03em; margin-bottom: 4px; }
-
-/* Legal page */
-.legal-nav {
-  display: flex;
-  gap: 12px;
-  justify-content: center;
-  margin-bottom: 36px;
-  flex-wrap: wrap;
-}
-.legal-nav a {
-  padding: 8px 16px;
-  border-radius: 999px;
-  border: 1px solid var(--border);
-  text-decoration: none;
-  font-size: 14px;
-  color: var(--text);
-}
-.legal-nav a:hover { border-color: var(--navy); color: var(--navy); }
-.legal-updated {
-  text-align: center;
-  color: var(--muted);
-  font-size: 14px;
-  margin-bottom: 40px;
-}
-.prose h2 { font-size: 20px; border-top: 1px solid var(--border); padding-top: 24px; }
-.prose h2:first-of-type { border-top: none; padding-top: 0; }
-
-/* Contact */
-.contact-card {
-  max-width: 560px;
-  margin: 0 auto;
-  background: var(--card-bg);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 36px;
-  text-align: center;
-}
-.contact-card .email {
-  display: inline-block;
-  margin-top: 8px;
-  font-size: 18px;
-  font-weight: 700;
-}
-
-/* Resources */
-.resource-list {
-  max-width: 680px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-.resource-row {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  background: var(--card-bg);
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  padding: 18px 22px;
-  text-decoration: none;
-  color: var(--text);
-}
-.resource-row:hover { border-color: var(--navy); }
-.resource-row .icon {
-  width: 42px; height: 42px;
-  border-radius: 10px;
-  background: #EEF4FB;
-  color: var(--navy);
-  display: flex; align-items: center; justify-content: center;
-  font-weight: 700; font-size: 15px;
-  flex-shrink: 0;
-}
-.resource-row .info { flex: 1; }
-.resource-row .label { font-weight: 600; font-size: 15px; }
-.resource-row .hint { color: var(--muted); font-size: 13px; margin-top: 2px; }
-.resource-row .go { color: var(--navy); font-weight: 600; font-size: 14px; flex-shrink: 0; }
-
-/* Footer */
-footer.site {
-  border-top: 1px solid var(--border);
-  padding: 36px 0;
-  margin-top: 40px;
-}
-footer.site .wrap {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 16px;
-}
-footer.site .foot-links a {
-  margin-left: 20px;
-  text-decoration: none;
-  color: var(--muted);
-  font-size: 14px;
-}
-footer.site .foot-links a:hover { color: var(--navy); }
-footer.site .disclaimer {
-  font-size: 13px;
-  color: var(--muted);
-  margin-top: 18px;
-  /* The footer's outer .wrap uses align-items:flex-start, which shrinks
-     flex children to their content width instead of stretching them —
-     that's what was making this paragraph wrap narrower than the rest of
-     the footer. width:100% forces it to use the full row width instead.
-     Widened 2026-08-10 per Mon's request. */
-  width: 100%;
-}
-
-@media (max-width: 860px) {
-  .hero .wrap { grid-template-columns: 1fr; }
-  .grid-3, .grid-4, .pilot-stats, .credentials { grid-template-columns: 1fr 1fr; }
-  .testimonials { grid-template-columns: 1fr; }
-  .shot-row { grid-template-columns: 1fr; }
-  nav.main { display: none; }
-}
+<script src="nav.js"></script>
+</body>
+</html>
