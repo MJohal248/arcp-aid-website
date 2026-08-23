@@ -247,6 +247,11 @@ p.section-sub {
   border: 1px solid var(--border);
   border-radius: 14px;
   overflow: hidden;
+  /* Grid stretches both cards to equal height, but without flex here the
+     shorter quote just leaves blank space above its attribution bar
+     instead of the two bars lining up. flex + quote's flex:1 below makes
+     the quote grow to fill whatever's left, so both attribution footers
+     sit flush at the same height regardless of quote length. */
   display: flex;
   flex-direction: column;
 }
@@ -280,6 +285,11 @@ p.section-sub {
 .download-box .btn-primary:hover { background: #EEF4FB; }
 .download-box .btn-secondary { border-color: #fff; color: #fff; }
 .download-box .btn-secondary:hover { background: rgba(255,255,255,0.1); }
+/* Coming-soon badge (e.g. Android before its store listing is live) —
+   looks like a button but isn't clickable: no href, no hover state,
+   reduced opacity, not-allowed cursor. */
+.btn-disabled { opacity: 0.5; cursor: not-allowed; }
+.download-box .btn-disabled:hover { background: transparent; }
 
 /* About page */
 .about-hero {
@@ -417,6 +427,11 @@ footer.site .disclaimer {
   font-size: 13px;
   color: var(--muted);
   margin-top: 18px;
+  /* The footer's outer .wrap uses align-items:flex-start, which shrinks
+     flex children to their content width instead of stretching them —
+     that's what was making this paragraph wrap narrower than the rest of
+     the footer. width:100% forces it to use the full row width instead.
+     Widened 2026-08-10 per Mon's request. */
   width: 100%;
 }
 
@@ -426,5 +441,4 @@ footer.site .disclaimer {
   .testimonials { grid-template-columns: 1fr; }
   .shot-row { grid-template-columns: 1fr; }
   nav.main { display: none; }
-  .menu-toggle { display: flex; }
 }
