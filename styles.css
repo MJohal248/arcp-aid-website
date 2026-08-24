@@ -271,29 +271,13 @@ p.section-sub {
 .testimonial .name { font-weight: 700; font-size: 14px; margin: 0; }
 .testimonial .role { color: var(--muted); font-size: 13px; margin: 2px 0 0; }
 
-/* Download — a QR card and a download-info card, side by side, same size,
-   both using the site's standard .card treatment (white bg, light-blue
-   border, 14px radius) so they read as a matched pair. Mirrors the layout
-   used on the printed flyer, so the two stay visually consistent. */
-.download-row {
-  display: flex;
-  gap: 24px;
-  align-items: stretch;
-  max-width: 760px;
+/* Download — a single centered card using the site's standard .card
+   treatment (white bg, light-blue border, 14px radius). */
+.download-card {
+  max-width: 420px;
   margin: 0 auto;
+  text-align: center;
 }
-.download-row .card {
-  flex: 1 1 0;
-  display: flex;
-  flex-direction: column;
-}
-.qr-card {
-  align-items: center;
-  justify-content: center;
-  padding: 32px;
-}
-.qr-image { width: 100%; max-width: 220px; height: auto; }
-.download-card { justify-content: center; }
 .download-card h3 { font-size: 20px; margin: 0 0 8px; }
 .download-card p { margin: 0 0 18px; }
 .download-card .cta-row { margin-bottom: 0; }
@@ -302,9 +286,6 @@ p.section-sub {
   font-size: 13px;
 }
 .domain-caption strong { color: var(--text); }
-@media (max-width: 640px) {
-  .download-row { flex-direction: column; }
-}
 /* Coming-soon badge (e.g. Android before its store listing is live) —
    looks like a button but isn't clickable: no href, no hover state,
    reduced opacity, not-allowed cursor. Stacks the store-name line and a
