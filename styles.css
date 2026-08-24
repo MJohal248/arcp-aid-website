@@ -287,8 +287,17 @@ p.section-sub {
 .download-box .btn-secondary:hover { background: rgba(255,255,255,0.1); }
 /* Coming-soon badge (e.g. Android before its store listing is live) —
    looks like a button but isn't clickable: no href, no hover state,
-   reduced opacity, not-allowed cursor. */
-.btn-disabled { opacity: 0.5; cursor: not-allowed; }
+   reduced opacity, not-allowed cursor. Stacks the store-name line and a
+   smaller "Coming soon" line, both centered, inside the same pill. */
+.btn-disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1.3;
+}
+.btn-disabled small { font-size: 12px; font-weight: 400; margin-top: 2px; }
 .download-box .btn-disabled:hover { background: transparent; }
 
 /* About page */
