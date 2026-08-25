@@ -281,11 +281,6 @@ p.section-sub {
 .download-card h3 { font-size: 20px; margin: 0 0 8px; }
 .download-card p { margin: 0 0 18px; }
 .download-card .cta-row { margin-bottom: 0; }
-.domain-caption {
-  margin: 18px 0 0 !important;
-  font-size: 13px;
-}
-.domain-caption strong { color: var(--text); }
 /* Coming-soon badge (e.g. Android before its store listing is live) —
    looks like a button but isn't clickable: no href, no hover state,
    reduced opacity, not-allowed cursor. Stacks the store-name line and a
